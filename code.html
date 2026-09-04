@@ -1,0 +1,1311 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Halo Banda Aceh - Satu Sapaan, Lima Pesona</title>
+<!-- Tailwind CSS v3 with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.6.0/confetti.browser.min.js"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            aceh: {
+              gold: '#F59E0B',
+              emerald: '#059669',
+              crimson: '#E11D48',
+              ocean: '#0284C7',
+              purple: '#7C3AED',
+              dark: '#0F172A',
+            }
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseSubtle: {
+              '0%, 100%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.04)' },
+            },
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-3deg)' },
+              '50%': { transform: 'rotate(3deg)' }
+            }
+          },
+          animation: {
+            float: 'float 4s ease-in-out infinite',
+            pulseSubtle: 'pulseSubtle 3s ease-in-out infinite',
+            wiggle: 'wiggle 2s ease-in-out infinite'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll">
+    /* Custom scrollbar and glassmorphism */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0284C7;
+      border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0369a1;
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .hero-mesh {
+      background-color: #fdfbf7;
+      background-image: 
+        radial-gradient(at 10% 10%, rgba(225, 29, 72, 0.12) 0px, transparent 50%),
+        radial-gradient(at 90% 15%, rgba(2, 132, 199, 0.15) 0px, transparent 50%),
+        radial-gradient(at 50% 85%, rgba(245, 158, 11, 0.12) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(5, 150, 105, 0.12) 0px, transparent 50%);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+<!-- BEGIN: MainHeader -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-amber-100 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Brand Logo & Title -->
+<a class="flex items-center gap-3 group" data-purpose="site-branding" href="#beranda">
+<img alt="Logo Halo Banda Aceh" class="w-14 h-14 object-contain transition-transform group-hover:scale-105 duration-300 drop-shadow-md rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHJ9J0TnjUVErSmA9VLPSCRpcjClr4kyJ_xbHFcQev3d6mIuqd7otk_xb8DeIlFnTbFJ8WFux-S62eif3K2o97qoKkdrjdplXm-sGJkR7vXM5C-h-B-wL4zy0zAghyGqH550TCGI2zA5ywQiSOVgYt-msiqhIv_tDPfTQdIASXFq4E4ASacSh6ly4t1MWFqlc3MWwF_i_ztIinatyr6B67ljyFUrut8Od6KNAT7Kq6TnaBF6cMQosPhZX-iTRV6GT6RQ">
+<div class="flex flex-col">
+<span class="text-xl font-black tracking-tight text-slate-900 flex items-center gap-1.5">
+              HALO <span class="text-transparent bg-clip-text bg-gradient-to-r from-aceh-crimson via-aceh-gold to-aceh-ocean">BANDA ACEH</span>
+</span>
+<span class="text-xs font-semibold text-aceh-emerald tracking-wide">Satu Sapaan, Lima Pesona</span>
+</div>
+</a>
+<!-- Desktop Navigation Menu -->
+<nav class="hidden md:flex items-center gap-1 lg:gap-2">
+<a class="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-aceh-ocean rounded-xl hover:bg-sky-50 transition-colors" href="#beranda">Beranda</a>
+<a class="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-aceh-emerald rounded-xl hover:bg-emerald-50 transition-colors" href="#lima-pesona">5 Pesona</a>
+<a class="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-aceh-crimson rounded-xl hover:bg-rose-50 transition-colors" href="#destinasi">Eksplorasi</a>
+
+<a class="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-aceh-purple rounded-xl hover:bg-purple-50 transition-colors" href="#peta-wisata">Peta Rute</a>
+<a class="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-emerald-700 rounded-xl hover:bg-emerald-50 transition-colors flex items-center gap-1.5 pointer-events-auto" href="https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw" onclick="openMapsUrl(this.href); return false;" rel="noopener noreferrer" target="_blank">
+<i class="fa-solid fa-map-pin text-aceh-crimson"></i> Google Maps
+</a>
+</nav>
+<!-- CTA Action Buttons -->
+<div class="flex items-center gap-3">
+<button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs sm:text-sm font-bold text-gray-900 rounded-2xl group bg-gradient-to-br from-aceh-crimson via-aceh-gold to-aceh-ocean group-hover:from-aceh-crimson group-hover:to-aceh-ocean hover:text-white shadow-lg hover:shadow-xl transition-all duration-300" id="open-quiz-btn" onclick="startQuizModal()">
+<span class="relative px-3.5 sm:px-4 py-2 transition-all ease-in duration-200 bg-white rounded-[14px] group-hover:bg-opacity-0 text-slate-800 group-hover:text-white flex items-center gap-2">
+<i class="fa-solid fa-gamepad text-aceh-crimson group-hover:text-white transition-colors animate-bounce"></i>
+<span class="">Mainkan Kuis 15 Soal</span>
+</span>
+</button>
+<!-- Mobile Menu Button -->
+<button aria-label="Buka Menu Navigasi" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+<i class="fa-solid fa-bars-staggered text-xl"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Navigation Drawer -->
+<div class="hidden md:hidden bg-white/95 border-b border-slate-200 px-6 py-4 transition-all duration-300" id="mobile-nav">
+<div class="flex flex-col space-y-2">
+<a class="px-4 py-2 font-bold text-slate-700 hover:bg-sky-50 rounded-xl" href="#beranda" onclick="toggleMobileMenu()">Beranda</a>
+<a class="px-4 py-2 font-bold text-slate-700 hover:bg-emerald-50 rounded-xl" href="#lima-pesona" onclick="toggleMobileMenu()">5 Pesona</a>
+<a class="px-4 py-2 font-bold text-slate-700 hover:bg-rose-50 rounded-xl" href="#destinasi" onclick="toggleMobileMenu()">Eksplorasi</a>
+
+<a class="px-4 py-2 font-bold text-slate-700 hover:bg-purple-50 rounded-xl" href="#peta-wisata" onclick="toggleMobileMenu()">Peta Rute</a>
+<a class="px-4 py-2 font-bold text-emerald-700 hover:bg-emerald-50 rounded-xl flex items-center gap-2 pointer-events-auto" href="https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw" onclick="openMapsUrl(this.href); return false;" rel="noopener noreferrer" target="_blank">
+<i class="fa-solid fa-map-pin text-aceh-crimson"></i> Google Maps Rute
+</a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative pt-32 pb-20 md:pt-40 md:pb-28 hero-mesh overflow-hidden border-b border-amber-100" id="beranda">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Hero Text & Verbatim Narrative -->
+<div class="lg:col-span-7 text-center lg:text-left space-y-6">
+<div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-amber-200 shadow-sm">
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-aceh-crimson opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-aceh-crimson"></span>
+</span>
+<span class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-slate-700">Portal Pariwisata Ceria Banda Aceh</span>
+</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
+              Satu Sapaan, <br>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-aceh-crimson via-aceh-gold to-aceh-ocean">Lima Pesona</span> Banda Aceh!
+            </h1>
+<!-- Verbatim Narrative Container -->
+<div class="relative bg-white/80 backdrop-blur p-5 sm:p-6 rounded-3xl border-2 border-dashed border-amber-300 shadow-sm">
+<p class="text-slate-700 text-base sm:text-lg leading-relaxed font-medium">
+                "Halo Banda Aceh merupakan platform digital yang menghadirkan lima pesona Charming Banda Aceh (Alam, Heritage, Tsunami, Kuliner, Religi) dalam satu genggaman. Satu scan QR, langsung tersaji cerita, lokasi, dan kuis edukatif. Mengenal Banda Aceh kini lebih dekat, mudah, dan bermakna."
+              </p>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+<a class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-aceh-ocean to-sky-600 text-white font-bold shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 pointer-events-auto" href="#destinasi">
+<i class="fa-solid fa-compass"></i>
+<span class="">Mulai Eksplorasi</span>
+</a>
+<button class="px-7 py-3.5 rounded-2xl bg-white border-2 border-aceh-crimson text-aceh-crimson font-bold shadow-sm hover:bg-rose-50 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 cursor-pointer pointer-events-auto" onclick="startQuizModal()">
+<i class="fa-solid fa-trophy text-aceh-gold"></i>
+<span class="">Tantangan Kuis</span>
+</button>
+</div>
+<!-- Badges Counter -->
+<div class="grid grid-cols-3 gap-4 pt-4 max-w-md mx-auto lg:mx-0">
+<div class="bg-white/90 p-3.5 rounded-2xl border border-slate-100 text-center shadow-xs">
+<div class="text-2xl font-black text-aceh-crimson">19+</div>
+<div class="text-xs font-semibold text-slate-500">Destinasi Utama</div>
+</div>
+<div class="bg-white/90 p-3.5 rounded-2xl border border-slate-100 text-center shadow-xs">
+<div class="text-2xl font-black text-aceh-gold">5</div>
+<div class="text-xs font-semibold text-slate-500">Pesona Unik</div>
+</div>
+<div class="bg-white/90 p-3.5 rounded-2xl border border-slate-100 text-center shadow-xs">
+<div class="text-2xl font-black text-aceh-emerald">100%</div>
+<div class="text-xs font-semibold text-slate-500">Akurasi GPS</div>
+</div>
+</div>
+</div>
+<!-- Hero Graphic & Mascot Side -->
+<div class="lg:col-span-5 relative flex justify-center">
+<!-- Glow background decorative circles -->
+<div class="absolute -top-10 -left-10 w-64 h-64 bg-amber-300/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-rose-300/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative w-full max-w-md">
+<!-- Big Official Logo Visual Representation -->
+<div class="relative z-10 bg-white p-6 sm:p-8 rounded-[2.5rem] shadow-2xl shadow-sky-900/10 border-4 border-amber-200 animate-float">
+<img alt="Logo Halo Banda Aceh Resmi" class="w-full h-auto rounded-3xl object-contain drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLF3zy3sWqQBHU9IOc6ULjwRHW_YP6j6ERYv6yeWBoJLFt4ktH5K6CnzlhBLjU3fIeAv89oBiCNp4G39c70Y2kzgW9RsN_FfIW_2ShcasX_oRn0-tdOQCBxqGopIUqFmHYF_q7H6ajQihrIPzB5ErnPFYCP9No0wBuUWGi-N4Lr-sFj3eIsG2TYAQK_-0hqEZ_ykg4fVMX0BDs4JyzCB9HYs0dQeA5ZX3j57AtQrWvGYfr0Kgc5UYwDlIJQNgeeGIzmw">
+<!-- Mascot "Si Rencong Cilik" Interactive Widget Floating -->
+<div class="absolute -top-6 -right-6 bg-gradient-to-tr from-aceh-crimson to-rose-400 text-white p-3 rounded-2xl shadow-xl flex items-center gap-2.5 animate-wiggle border-2 border-white cursor-pointer hover:scale-105 transition-transform" onclick="mascotSpeak()">
+<div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-lg">🗡️</div>
+<div class="text-left">
+<p class="text-[10px] uppercase font-black text-amber-200 tracking-wider">Maskot</p>
+<p class="text-xs font-extrabold">Si Rencong Cilik</p>
+</div>
+</div>
+<!-- Live Floating Speech Bubble -->
+<div class="mt-4 p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs font-bold text-slate-700 flex items-center gap-2" id="mascot-bubble">
+<span class="text-lg">👋</span>
+<span class="" id="mascot-text">"Peue Haba Sahabat! Ayo telusuri 5 keajaiban Banda Aceh!"</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: FiveCharmSection -->
+<section class="py-16 bg-white border-b border-slate-100" id="lima-pesona">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<span class="text-xs font-black tracking-widest text-aceh-ocean uppercase px-3 py-1 bg-sky-50 rounded-full border border-sky-200">5 Pilar Pariwisata</span>
+<h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">Harmoni Lima Pesona Kota</h2>
+<p class="text-slate-600 mt-3 font-medium">Banda Aceh menyatukan spirit spiritual, jejak ketangguhan tsunami, kilas sejarah kerajaan, asrinya pesisir pantai, dan kenikmatan kuliner legendaris.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6">
+<!-- Charm 1: Religi -->
+<div class="cursor-pointer group p-5 rounded-3xl bg-emerald-50/70 hover:bg-emerald-100/80 border border-emerald-200 transition-all duration-300 hover:-translate-y-1 text-center flex flex-col items-center" onclick="filterCategory('religi')">
+<div class="w-14 h-14 rounded-2xl bg-aceh-emerald text-white flex items-center justify-center text-2xl mb-3 shadow-md group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-mosque"></i>
+</div>
+<h3 class="font-extrabold text-slate-900 text-base">Religi</h3>
+<p class="text-xs text-slate-600 mt-1 font-medium">Kubah kemegahan spiritual &amp; masjid bersejarah</p>
+</div>
+<!-- Charm 2: Tsunami -->
+<div class="cursor-pointer group p-5 rounded-3xl bg-rose-50/70 hover:bg-rose-100/80 border border-rose-200 transition-all duration-300 hover:-translate-y-1 text-center flex flex-col items-center" onclick="filterCategory('tsunami')">
+<div class="w-14 h-14 rounded-2xl bg-aceh-crimson text-white flex items-center justify-center text-2xl mb-3 shadow-md group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-water"></i>
+</div>
+<h3 class="font-extrabold text-slate-900 text-base">Tsunami</h3>
+<p class="text-xs text-slate-600 mt-1 font-medium">Monumen ketangguhan &amp; refleksi dunia</p>
+</div>
+<!-- Charm 3: Heritage -->
+<div class="cursor-pointer group p-5 rounded-3xl bg-amber-50/70 hover:bg-amber-100/80 border border-amber-200 transition-all duration-300 hover:-translate-y-1 text-center flex flex-col items-center" onclick="filterCategory('heritage')">
+<div class="w-14 h-14 rounded-2xl bg-aceh-gold text-white flex items-center justify-center text-2xl mb-3 shadow-md group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-landmark"></i>
+</div>
+<h3 class="font-extrabold text-slate-900 text-base">Heritage</h3>
+<p class="text-xs text-slate-600 mt-1 font-medium">Napak tilas kejayaan Kesultanan Aceh</p>
+</div>
+<!-- Charm 4: Alam -->
+<div class="cursor-pointer group p-5 rounded-3xl bg-sky-50/70 hover:bg-sky-100/80 border border-sky-200 transition-all duration-300 hover:-translate-y-1 text-center flex flex-col items-center" onclick="filterCategory('alam')">
+<div class="w-14 h-14 rounded-2xl bg-aceh-ocean text-white flex items-center justify-center text-2xl mb-3 shadow-md group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-tree"></i>
+</div>
+<h3 class="font-extrabold text-slate-900 text-base">Alam</h3>
+<p class="text-xs text-slate-600 mt-1 font-medium">Semilir pesisir bahari &amp; keteduhan taman</p>
+</div>
+<!-- Charm 5: Kuliner -->
+<div class="col-span-2 md:col-span-1 cursor-pointer group p-5 rounded-3xl bg-purple-50/70 hover:bg-purple-100/80 border border-purple-200 transition-all duration-300 hover:-translate-y-1 text-center flex flex-col items-center" onclick="filterCategory('kuliner')">
+<div class="w-14 h-14 rounded-2xl bg-aceh-purple text-white flex items-center justify-center text-2xl mb-3 shadow-md group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-bowl-food"></i>
+</div>
+<h3 class="font-extrabold text-slate-900 text-base">Kuliner</h3>
+<p class="text-xs text-slate-600 mt-1 font-medium">Rempah cita rasa legendaris menggugah selera</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: FiveCharmSection -->
+<!-- BEGIN: DestinationExplorer -->
+<section class="py-20 bg-slate-50 relative" id="destinasi">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Header & Search Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<span class="text-xs font-black tracking-widest text-aceh-crimson uppercase px-3 py-1 bg-rose-50 rounded-full border border-rose-200">Katalog Destinasi</span>
+<h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">Jelajahi Lokasi Menakjubkan</h2>
+<p class="text-slate-600 text-sm font-medium mt-1">Gunakan pencarian instan dan filter sektor di bawah untuk kemudahan navigasi.</p>
+</div>
+<!-- Search Input -->
+<div class="relative w-full md:w-80" data-purpose="search-box">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+<i class="fa-solid fa-magnifying-glass"></i>
+</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-2xl border-2 border-slate-200 bg-white text-sm font-semibold focus:border-aceh-ocean focus:ring-aceh-ocean shadow-xs" id="dest-search" oninput="handleFilter()" placeholder="Cari nama destinasi / kategori..." type="text">
+</div>
+</div>
+<!-- Filter Pill Buttons -->
+<div class="flex flex-wrap gap-2.5 mb-10" id="filter-buttons">
+<button class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-900 text-white shadow-sm transition-all" data-cat="all" onclick="filterCategory('all')">Semua Destinasi (19)</button>
+<button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-emerald-50 hover:text-aceh-emerald border border-slate-200 transition-all" data-cat="religi" onclick="filterCategory('religi')">Religi</button>
+<button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-rose-50 hover:text-aceh-crimson border border-slate-200 transition-all" data-cat="tsunami" onclick="filterCategory('tsunami')">Tsunami</button>
+<button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 hover:text-aceh-gold border border-slate-200 transition-all" data-cat="heritage" onclick="filterCategory('heritage')">Heritage</button>
+<button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-sky-50 hover:text-aceh-ocean border border-slate-200 transition-all" data-cat="alam" onclick="filterCategory('alam')">Alam</button>
+<button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-purple-50 hover:text-aceh-purple border border-slate-200 transition-all" data-cat="kuliner" onclick="filterCategory('kuliner')">Kuliner</button>
+</div>
+<!-- Destination Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="dest-grid">
+<!-- Card 1: Masjid Raya Baiturrahman -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="religi">
+<div class="relative h-56 overflow-hidden">
+<img alt="Masjid Raya Baiturrahman" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZItgmh6dKfX-WtwaalQ_OyZyL8ptHw245fi3pWO1zbW_xMCh5iebMbUgsdek7ka_8fVGyzGDzJ3Ix0LyEcGFxts5geRuo1Tqti0YE171vX0_vWcBDKSdMAilYpgzUoxXo0ctQ2OQkQ93U2m6xNlD82qXudNkdwOmYlrMKuGGACOCFvMmhvhP4Fhmz8VbTjB5ZQlu7rSicbrLgLi5XRq1hTnmKkWphmhli5UO37-0mN0DDgd_cmy_opEnCzKdgCIriuQ">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white shadow">Religi</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Masjid Raya Baiturrahman</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Jl. Moh. Jam No.1, Kp. Baru, Kec. Baiturrahman
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Ikon spiritual dan ketangguhan rakyat Aceh. Arsitektur megah bergaya Kesultanan Mughal dengan payung elektrik raksasa layaknya Nabawi.
+                </p>
+</div>
+<div class="space-y-2 pt-1"><a class="w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean transition-all shadow pointer-events-auto" href="https://maps.app.goo.gl/oEszxXEiz2appExz6?g_st=iw" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a><div class="flex items-center justify-between gap-1 text-[11px] bg-slate-100 p-2 rounded-xl border border-slate-200"><a class="truncate font-mono text-aceh-ocean hover:underline font-semibold" href="https://maps.app.goo.gl/oEszxXEiz2appExz6?g_st=iw" target="_blank" rel="noopener noreferrer">🔗 maps.app.goo.gl/oEszxXEiz2appExz6</a><button class="px-2 py-1 bg-white hover:bg-slate-200 text-slate-700 rounded text-[10px] font-bold shrink-0 border border-slate-300" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/oEszxXEiz2appExz6?g_st=iw'); alert('Link disalin ke clipboard!'); return false;">Salin</button></div></div>
+</div>
+</article>
+<!-- Card 2: Masjid Baiturrahim Ulee Lheue -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="religi">
+<div class="relative h-56 overflow-hidden">
+<img alt="Masjid Baiturrahim Ulee Lheue" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuLsNzarfuGq4srQ4BQswyznovyn1C9Ez0FXuV728H7ysnDZXLI1h2dAX0zOAfGIUZ-diiHCVji9v47rBqh3J2WpvEHGVur4oswX5Udz9a48uryq95wBpL2vVAbpyhLwz4fV-kNGlKSg5rcK1kKA9SDtkrLJJUIuZpvoQhId3yF-XsMgeBIUPCNNGH4HF91a2ZLXas1QfcEhrjOCt9r-8nBe1J9EVwOu3Swab_SYxBtGoHe3OpMKVinyVIAgFhuQsFvg">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white shadow">Religi</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Masjid Baiturrahim Ulee Lheue</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Ulee Lheue, Kec. Meuraxa, Kota Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Saksi bisu kedahsyatan tsunami 2004 yang tetap kokoh berdiri di bibir pantai walau seluruh bangunan di sekitarnya tersapu ombak.
+                </p>
+</div>
+<div class="space-y-2 pt-1"><a class="w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean transition-all shadow pointer-events-auto" href="https://maps.app.goo.gl/uNwfkK2oU5ddDyjZ8?g_st=iw" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a><div class="flex items-center justify-between gap-1 text-[11px] bg-slate-100 p-2 rounded-xl border border-slate-200"><a class="truncate font-mono text-aceh-ocean hover:underline font-semibold" href="https://maps.app.goo.gl/uNwfkK2oU5ddDyjZ8?g_st=iw" target="_blank" rel="noopener noreferrer">🔗 maps.app.goo.gl/uNwfkK2oU5ddDyjZ8</a><button class="px-2 py-1 bg-white hover:bg-slate-200 text-slate-700 rounded text-[10px] font-bold shrink-0 border border-slate-300" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/uNwfkK2oU5ddDyjZ8?g_st=iw'); alert('Link disalin ke clipboard!'); return false;">Salin</button></div></div>
+</div>
+</article>
+<!-- Card 3: Masjid Oman Al-Makmur -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="religi">
+<div class="relative h-56 overflow-hidden">
+<img alt="Masjid Oman Al-Makmur" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmJ7knI8Bi-oROero8AbuYrF8UfscKkeEowE6FD5Lk-NhgP5_GWcb4K5XKob5c48xRJuA2ZeBEu4xD2-0CvOIqzJ6x0-oieCDJDuRyzfX2F_FR6JD1OyjRi3QwDb6W7D6iv3pnbWlTzKXN0KjHTw0qU3vNTN0mghATKHxvM2A_lvHQkOi4PAqivi09GsR6Cap9C_JyCAAKqRXXMz90-TgtfQxos2zX-SDLvpmPB7N9eCTou3wY1acKcFpWERsVXBkkIA">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white shadow">Religi</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Masjid Oman Al-Makmur</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Lampprit, Kec. Kuta Alam, Kota Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Masjid berarsitektur khas Timur Tengah bantuan Kesultanan Oman yang sangat bersih, asri, serta memiliki kubah toska nan menawan.
+                </p>
+</div>
+<div class="space-y-2 pt-1"><a class="w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean transition-all shadow pointer-events-auto" href="https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a><div class="flex items-center justify-between gap-1 text-[11px] bg-slate-100 p-2 rounded-xl border border-slate-200"><a class="truncate font-mono text-aceh-ocean hover:underline font-semibold" href="https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw" target="_blank" rel="noopener noreferrer">🔗 maps.app.goo.gl/Pu7SALMt81s5aMfEA</a><button class="px-2 py-1 bg-white hover:bg-slate-200 text-slate-700 rounded text-[10px] font-bold shrink-0 border border-slate-300" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw'); alert('Link disalin ke clipboard!'); return false;">Salin</button></div></div>
+</div>
+</article>
+<!-- Card 4: Masjid Kupiah Meuketop -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="religi">
+<div class="relative h-56 overflow-hidden">
+<img alt="Masjid Kupiah Meuketop" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDojBzief7y3eiHuhZ8sbLo9TvW4IDxiEpcte2Eo5cwz5JI6O1_HasbnNLPdzJ99giwiSBeGNvmh3qG3-EtizIpl_kxSqIxvQyoCtbX0NEB4RCrO_BqlXhMb16lc7_BvIJN8rS8H1JGzGj0BxaHHD77i8Xt_Izn7WXPN5BuxlwBYLbSrmFER60rWp2_jLGk3fHPM4tIfoXR0_SOz2ZFd8wpQiD8yAcVzpCyMKAtlsowdZ6mH5nQyQ_b-mzbLAJxM8aGyw">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white shadow">Religi</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Masjid Kupiah Meuketop</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Teunom / Banda Aceh Area
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Kubah masjid unik menyerupai Kupiah Meuketop (topi tradisional kehormatan pahlawan Teuku Umar) yang sarat filosofi budaya Aceh.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/gbA1ZBo7ioWLR6uL8?g_st=iw" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 5: Masjid Haji Keuchik Leumik -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="religi">
+<div class="relative h-56 overflow-hidden">
+<img alt="Masjid Haji Keuchik Leumik" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuHfl5cV13jdBLihuvJog4lTaCqqFJEgSSOQHjXPYoWHS_QJRyI-XH5iw3dp-0onSCRM5mSpqmXb6ja5W7h_yJLlsvYgOwXmK7fvqyqS74lI3Q1gpkgYm7CfqJ6R_799or9PNtjzdNuyzJywj0JO7MwOb46xmKLHAxPLSp3111-VuqjqU5zQefWSWVzda_gjihxVMiIBbREPRAitD8eiPLSLIoTz1WrXh-lnZE9un2ygy97DhudMNqkWp1DK8csSr80w">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white shadow">Religi</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Masjid Haji Keuchik Leumik</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Lamseupeung, Lueng Bata, Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Mahakarya arsitektur bernuansa emas bergaya Andalusia dan Timur Tengah yang berdiri megah di tepi aliran Krueng Aceh.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/uAGsPyspzeJ8Xu5PA?g_st=iw" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 6: Museum Tsunami Aceh -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="tsunami">
+<div class="relative h-56 overflow-hidden">
+<img alt="Museum Tsunami Aceh" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGi8aIgR_p0_33i05y0MEHXXRZveRx8MBW-7-6E81jU9zqOozd9pd7GSjMzuIfrzMW9fHNQjNmEGCxbi7taLPJ3Tx2o6Ht9WzXunc_sVOjRZ6Udl33dUqtifXGmD7J-GcOITLQzwKyIm-0K0qxySeACaLBymLeDVNwhRGBOu-fgQRthKofLDkf8YcTp2Okr37ecdk4EPo6fHOLF6OUN5CFrir6bHRGZLfi_i9NaRQGL9QuEwGf2pHkmw06bCzzDqTCXQ">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-rose-500 text-white shadow">Tsunami</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Museum Tsunami Aceh</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Jl. Sultan Iskandar Muda, Sukaramai, Baiturrahman
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Karya arsitek Ridwan Kamil sebagai monumen edukasi bencana, ruang renungan lorong tsunami, serta cerobong doa pengenang korban.
+                </p>
+</div>
+<div class="space-y-2 pt-1"><a class="w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean transition-all shadow pointer-events-auto" href="https://maps.app.goo.gl/r6e46raz3mrtXKzd6?g_st=iw" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a><div class="flex items-center justify-between gap-1 text-[11px] bg-slate-100 p-2 rounded-xl border border-slate-200"><a class="truncate font-mono text-aceh-ocean hover:underline font-semibold" href="https://maps.app.goo.gl/r6e46raz3mrtXKzd6?g_st=iw" target="_blank" rel="noopener noreferrer">🔗 maps.app.goo.gl/r6e46raz3mrtXKzd6</a><button class="px-2 py-1 bg-white hover:bg-slate-200 text-slate-700 rounded text-[10px] font-bold shrink-0 border border-slate-300" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/r6e46raz3mrtXKzd6?g_st=iw'); alert('Link disalin ke clipboard!'); return false;">Salin</button></div></div>
+</div>
+</article>
+<!-- Card 7: Kapal PLTD Apung -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="tsunami">
+<div class="relative h-56 overflow-hidden">
+<img alt="Kapal PLTD Apung" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDse9lgfkJ8-qHktOSjEFcY623cc4HWXcjeFdIdH1zWdD2ztm_9l_1mQ3vumPgxvYyzCC-PS5GStYWT-fSEecpmu6eZfwd87s2yH9PUYkoRTXl_kvSYSInFE0xb84PRJbXUQ9iayhKRC-FpclCsWSiP31iVI8Ib8sy0kPyt-HerbZxvtn9CDhEgCBz7En9CwsfaM_Xq22J__39Cth2Ej3RPhFJJoT7O6zF_OgtkM23gAsgnCQLU2OwvW8szkOh77HHBkQ">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-rose-500 text-white shadow">Tsunami</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Kapal PLTD Apung</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Punge Blang Cut, Jaya Baru, Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Kapal pembangkit listrik seberat 2.600 ton yang terhempas sejauh 5 km ke tengah permukiman warga saat gelombang tsunami melanda.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/fT8Hgzc4u1A8SNSy6?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 8: Kapal di Atas Rumah Lampulo -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="tsunami">
+<div class="relative h-56 overflow-hidden">
+<img alt="Kapal di Atas Rumah Lampulo" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuP_TbGNdnR-eqU_8-bYRvVBYwcSrhG54O574D5LLiKrjYCU7qCAqWgj_OwsjEh6S-w6YdJDMLzwpCNF-9a8O8fGtNaxOiO5kWe_kiaCP365dVEEcR0WqKjZXiqtgpDKNZsQJHs5y8aBP8qO0v7-Ddk4WO5Q9dsur7f8FB0GVf1NRexKMQd8XQ9WvV2wmgBYtZDh68Q__kNHkjaNlroZKnKIRWsi_BxgPg1z5waiIC6eYIjGLEEKbMDlACEKRaLmNo0w">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-rose-500 text-white shadow">Tsunami</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Kapal di Atas Rumah Lampulo</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Lampulo, Kec. Kuta Alam, Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Bukti nyata kuasa Ilahi, kapal nelayan kayu yang tersangkut di atap rumah dan sempat menyelamatkan puluhan nyawa warga kala bencana.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/A1R2nHWDWorxCCyX6?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 9: Makam Massal Ulee Lheue -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="tsunami">
+<div class="relative h-56 overflow-hidden">
+<img alt="Makam Massal Ulee Lheue" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqcdId20H5GBUE7EeYOgbE9mSItUOztbOxMtxYK1WzMDCQyYmeyiHRbcSOof0Z1kNvjSvZ-Voh_3o2817HfVwrRBL2TogN7OcT5Sjs-UpJGPqcHtzgfS0M0QjHtLlOelRKqRLbjjY6b0-zXiedEZzF_MyGNuuj9Qaf6cwrPtDXxY-vFvOvV6mEN14-sRp60ASRtnMZs2BMe_QgByISIxSmkM4x-qMtPV95BTB1czhVzjOVuhiG657H1BsZ_mtFvRAF_w">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-rose-500 text-white shadow">Tsunami</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Makam Massal Ulee Lheue</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Ulee Lheue, Meuraxa, Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Area peristirahatan suci belasan ribu syuhada tsunami 2004, sarat akan doa, keheningan spiritual, serta renungan kemanusiaan.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/28yymqSG51DonVff9?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 10: Makam Sultan Iskandar Muda -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="heritage">
+<div class="relative h-56 overflow-hidden">
+<img alt="Makam Sultan Iskandar Muda" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ6ET1uVvvAZQtI13saKJKRQEZg5SG1HPOzQcb0F7w6LJmhzEle8-pUt7zPv0qFty95CSn1hSR02S-EpYSMKGm0nQFp0EBmpkKJLcGWlegv5DMi2OeNz95j80TVff9713C7axqjvQ0qu5-TKr33Swcby3Qym73bycmUlsLtTE75qQnIdQpiMTMx3e9DKs4Ttc7vmjtsYS6eEeA9V1CpqenZ6SM8b0vDrWuQES0ZkMW3GXFGInxgIcfYYeK__o3uajdHw">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white shadow">Heritage</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Makam Sultan Iskandar Muda</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Peuniti, Baiturrahman (Kompleks Meuligoe Aceh)
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Makam pemimpin agung Kesultanan Aceh Darussalam masa keemasan abad ke-17 yang disegani kancah diplomasi internasional.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/3PQBzrdkt3EpWDk36?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 11: Museum Aceh & Rumoh Aceh -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="heritage">
+<div class="relative h-56 overflow-hidden">
+<img alt="Museum Aceh &amp; Rumoh Aceh" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWyGYaBXDMignw83-Yxzuuec-5QFioXqbGzY5zKsL-L5ujG9QXCFrJt0sDXpRZt6OZxkp1kzRDiLj3_S3aL-dYv2L0WvzruFGgAcoypSx_Ij7oa6RqHpZz8F5FPAcEgc8h1_HHdFoiofWvBsw1J3iefD41g_wXOUAVoXDMBK1noF2R1SiTW0NXkv3vdawsFAzsOpuEdwgoK2UY9K74ORdSv1EVlFU5Yc9pJU9fw1hwEY0_CU2IKs_7KmsoBrnJvn-8mA">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white shadow">Heritage</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Museum Aceh &amp; Rumoh Aceh</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Jl. Sultan Mahmud Syah, Peuniti, Baiturrahman
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Rumah panggung adat Aceh berumur lebih dari satu abad, lonceng bersejarah Cakra Donya, dan ribuan artefak peninggalan kebudayaan.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/zk7wtJF1mybpVSdLA?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 12: Taman Gunongan & Pinto Khop -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="heritage">
+<div class="relative h-56 overflow-hidden">
+<img alt="Taman Gunongan &amp; Pinto Khop" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA861lM_CYWLI1jx_qWXDE3v0xfc_GtELOOZnq3K0Eor7iB_L14gHlhDftyp2_IGHt-xVfX81M-hy47N3EOihNAfLUhbcjH8jgsnxI0aQZy4KrZxqldTV99WeuG0E58YINpgOa_-ZAfaZRze54sUW5XXj0RTsyi0PLYHzyTxw1ZwQhc_k4BOFQf8l6fs_YGypzbpmzhC5p_3kNwwzKNeKa__pWSOsMLp-bAX5Fm6zbeYhgTkxOX_y2daGBjYrmV4BpyEg">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white shadow">Heritage</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Taman Gunongan &amp; Pinto Khop</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Sukaramai, Kec. Baiturrahman, Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Simbol cinta Sultan Iskandar Muda kepada permaisurinya Putri Phang dari Pahang Malaysia, dibangun menyerupai bukit pegunungan.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/SFpog83Wpdptkr9VA?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 13: Kerkhoff Poureut -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="heritage">
+<div class="relative h-56 overflow-hidden">
+<img alt="Kerkhoff Poureut" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRg0E0vWOxb4zCG5zkpK_Q3r1zL7HFFN5XoCIkrppceK4HdXAH3Z7kSkeYdT8D8gopGnR8TK5HOnltfbXF-lcdoyslKRBoJ6Gqop0uiNBE0IxH0gcu4aT9bbRUsEqg17ogpQoH-i7besl_tUQB_G7sYTDbkqE10LFM2xRxT8jet2MWZlorT_xZZ15WucdbU2HH0LkremRIL6ofDoli29bi-IC3DRFhKaT-sITkJCnLr6RKR34kukK8tTstWRNbz5-Eig">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white shadow">Heritage</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Kerkhoff Poureut</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Sukaramai, Baiturrahman, Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Salah satu pemakaman militer Belanda terbesar di luar Belanda, merefleksikan sengitnya perlawanan para pejuang Aceh pada masa kolonial.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/zzXy3nKdbwwNGueTA?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 14: Blang Padang (RI-001 Seulawah) -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="heritage">
+<div class="relative h-56 overflow-hidden">
+<img alt="Blang Padang (RI-001 Seulawah)" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6rNJAWSxovKbZpha98QNYYu-5-VF6x5a1614eZKGpas4GqHvqTeGmV0ZYE5yRRKQSsBwhQ9WQlHSPueI048g8m5VSVr5-i1W2slW2dJ5GulU3zZH8Bd5p9aCtKy2BJcr22UKhMPmSdlAyK2YmTONh58XvwrpSTKxI9cwqpTWsIlVRburTofO9g9BOkTD4LN6I4Ek4Sz6klU_-E9vc3BOe7L0Yjj_fejzkpUFvEE_CALujXp8SHv7IA27ZqZoyx_h6JA">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white shadow">Heritage</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Lapangan Blang Padang</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Kp. Baru, Kec. Baiturrahman, Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Alun-alun terbuka kota yang dihiasi monumen replika Pesawat Pertama RI 'Dakota RI-001 Seulawah', wujud sumbangan emas rakyat Aceh.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/AWCMUXJTECpeuFH78?g_st=iw" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 15: Pantai Ulee Lheue -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="alam">
+<div class="relative h-56 overflow-hidden">
+<img alt="Pantai Ulee Lheue" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeOt6cUiIAhsIuwEetGaEZh46LcMSn33NWYfKWVyVOTQ6S2WqbiirYC87LIR4tbpuh0R8jRhquldxWOiK5hDKLuRSpYKeaO27Wwt8Zz3kv0R-rlCGDElwhI8KzM9gpR31wArwVF0xsNBJ2z8nKqwSaFrDxl23uOZvkpLj-uasZuh8J9_-IEik-bCun6Jm523XGUITSAvd3e_Nx9h77Rgfe_BospJJAqAC6fxtgpAGnbeMXlpZpw48aZKLVeNHtcm_oVA">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-sky-500 text-white shadow">Alam</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Pantai Ulee Lheue</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Ulee Lheue, Kec. Meuraxa, Kota Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Destinasi bahari favorit untuk menikmati semburat jingga matahari terbenam (sunset), semilir angin laut, dan pemandangan pulau Sabang.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/NhaqKmTA8WjCEEo17?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 16: Hutan Kota BNI Tibang -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="alam">
+<div class="relative h-56 overflow-hidden">
+<img alt="Hutan Kota BNI Tibang" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX3zPcQALef4She2oqHWqD8BareRFzp7IxptIk6KbgmU4SO-2oOfhOUsgL5wXSLN4x1ZDUJRGem8C9OhHOlYqyPG82jcYIDwvc8BOcU04jc3gmgnfvF-sx21-X0o9vURj1oBemdh-avb3qhMhQQrejkIwiHlVOfcO9gPMyTj3Qk2Zbr_sYOfnxPYKozH-NX1Sre1RPJ8Zh-gzBdH0kioQO43vWuz57eP12HkK0veZvVsbO7f0V1ugGqVqt_YqjD0AHYQ">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-sky-500 text-white shadow">Alam</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Hutan Kota BNI Tibang</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Tibang, Kec. Syiah Kuala, Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Oase paru-paru kota rimbun dengan jembatan lengkung estetis dan jalur mangrove yang sejuk untuk rekreasi keluarga.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/5DDh2qr4uapkoSYm8?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 17: Kawasan Bahari Alue Naga -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="alam">
+<div class="relative h-56 overflow-hidden">
+<img alt="Kawasan Bahari Alue Naga" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQVL2E3iZwyzkCswCoHf-IoU6XziHFqA_ADGLcit23RdhIYCCcnpmkxhV_XQsLGFB5p1w7N4w2wJbv7h_M3nCsXw2nRjog7-L3becGB_C18tndwmlSjwkaHVBaBWV_eA2TOqLzvrItHcwmFg9wkbCF-fWc6q2rwVdelBieOUE2pXeQVz9BnU253otHdYt2Em3T-QU_mkKLTFq_vsQRibcyN4BO3psjDaTbyyBtoRrbNG7yc4fZ59R-CEK8P028A-a7fQ">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-sky-500 text-white shadow">Alam</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Kawasan Bahari Alue Naga</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Alue Naga, Kec. Syiah Kuala, Banda Aceh
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Jalan memanjang eksotis diapit jajaran pohon cemara dan muara laut lepas yang memberikan suasana damai serta angin sejuk.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/aXyLFR4SaAnG3NM29?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 18: Mie Razali Peunayong -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="kuliner">
+<div class="relative h-56 overflow-hidden">
+<img alt="Mie Razali Peunayong" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbRkygYs63zwvzkSRpGt_S9DGUELH0g0SsFg74mRghAoildmo2-8uxqe17SDHEwsIIVhCWvWBQ8jiRgcOgRagVRUsQP0Zjs-6VLCyj7qeTf04etO3AmvQfSsF7t31FlV9XcCI5IVaIdBo-2fqhhu5OYiDiE4AYbV9Ip8eRH1J_VpM0tsTcp2c1YK7TNZiUo1DGd5wFsn3tFmmISD5g300C294prgvVQuxuouh5CIvscfCqmQsRDw3KlXez4qPtrSfydA">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-purple-600 text-white shadow">Kuliner</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Mie Razali Peunayong</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Jl. TP Polem No. 18 A-G, Peunayong
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Legenda kuliner Mie Aceh sejak 1967 dengan kuah kental kari kaya rempah dan topping kepiting serta cumi lezat.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/D15QYUUENx3UiFZt8?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+<!-- Card 19: Wisata Kuliner Ulee Lheue -->
+<article class="dest-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="kuliner">
+<div class="relative h-56 overflow-hidden">
+<img alt="Wisata Kuliner Ulee Lheue" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUtvDoB8jlt_xp-5GicRMDfTM_lGzHKVloh2QK6sdIF3lyH7nBJcnHtna0Wt6e90ponucb8O96tq8x1tVmGRLjZ9kruYXuwGzVWYd2VIK_7uewoIe6MTCZ20mN1veSwUx6XvGd1_kBbNHxZi5abDkm-VXsPWuR_hIysrWC-BKAQy3s-9sOmUrPFTaB2tRs7pyXGNTm5ZTP2VP4tWHQOuy3R7va45oWC6HStylBhWtuTkTdKSSbvi_iRKAszuKjlIVyQQ">
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-purple-600 text-white shadow">Kuliner</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<h3 class="text-xl font-black text-slate-900">Wisata Kuliner Ulee Lheue</h3>
+<p class="text-xs font-semibold text-slate-400 mt-1 flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot text-aceh-crimson"></i> Sepanjang Tanggul Pesisir Ulee Lheue
+                </p>
+<p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                  Pusat santai sore menikmati jagung bakar manis, kopi sanger khas Aceh, kelapa muda, dan ragam kudapan tradisional pesisir.
+                </p>
+</div>
+<a class="relative z-10 w-full py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-aceh-ocean active:scale-[0.98] transition-all cursor-pointer pointer-events-auto shadow" href="https://maps.app.goo.gl/m77VXTzqj56y2YE16?g_st=ic" onclick="window.open(this.href, '_blank'); return true;" rel="noopener noreferrer" target="_blank" style="pointer-events: auto; cursor: pointer; position: relative; z-index: 20;"><i class="fa-solid fa-diamond-turn-right text-amber-400"></i> Buka Google Maps Resmi</a>
+</div>
+</article>
+</div>
+<!-- No Results Fallback -->
+<div class="hidden text-center py-16" id="no-results">
+<i class="fa-solid fa-compass-drafting text-5xl text-slate-300 mb-4"></i>
+<h3 class="text-xl font-bold text-slate-700">Destinasi Tidak Ditemukan</h3>
+<p class="text-slate-500 text-sm mt-1">Coba kata kunci lain atau pilih kategori yang berbeda.</p>
+</div><div class="mt-16 bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-200 shadow-sm" id="daftar-link-maps"><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100"><div><span class="text-xs font-black tracking-widest text-aceh-crimson uppercase px-3 py-1 bg-rose-50 rounded-full border border-rose-200">Solusi Akses Langsung</span><h3 class="text-2xl font-black text-slate-900 mt-2 flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-aceh-ocean"></i> Daftar Lengkap Link Google Maps Rute Wisata</h3><p class="text-xs sm:text-sm text-slate-600 font-medium mt-1">Jika tombol peta terhalang popup blocker / iframe di browser Anda, klik atau salin link langsung di bawah ini:</p></div><button class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold shrink-0 flex items-center gap-2 self-start sm:self-center" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw'); alert('Link Titik Pusat Banda Aceh disalin!');"><i class="fa-solid fa-map-pin text-amber-400"></i> Salin Link Pusat Kota</button></div><div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-6"><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">1. Masjid Raya Baiturrahman</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/oEszxXEiz2appExz6?g_st=iw" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/oEszxXEiz2appExz6</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/oEszxXEiz2appExz6?g_st=iw'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">2. Masjid Baiturrahim Ulee Lheue</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/uNwfkK2oU5ddDyjZ8?g_st=iw" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/uNwfkK2oU5ddDyjZ8</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/uNwfkK2oU5ddDyjZ8?g_st=iw'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">3. Masjid Oman Al-Makmur</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/Pu7SALMt81s5aMfEA</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">4. Masjid Kupiah Meuketop</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/gbA1ZBo7ioWLR6uL8?g_st=iw" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/gbA1ZBo7ioWLR6uL8</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/gbA1ZBo7ioWLR6uL8?g_st=iw'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">5. Masjid Haji Keuchik Leumik</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/uAGsPyspzeJ8Xu5PA?g_st=iw" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/uAGsPyspzeJ8Xu5PA</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/uAGsPyspzeJ8Xu5PA?g_st=iw'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">6. Museum Tsunami Aceh</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/r6e46raz3mrtXKzd6?g_st=iw" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/r6e46raz3mrtXKzd6</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/r6e46raz3mrtXKzd6?g_st=iw'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">7. Kapal PLTD Apung</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/fT8Hgzc4u1A8SNSy6?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/fT8Hgzc4u1A8SNSy6</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/fT8Hgzc4u1A8SNSy6?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">8. Kapal di Atas Rumah Lampulo</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/A1R2nHWDWorxCCyX6?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/A1R2nHWDWorxCCyX6</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/A1R2nHWDWorxCCyX6?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">9. Makam Massal Ulee Lheue</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/28yymqSG51DonVff9?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/28yymqSG51DonVff9</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/28yymqSG51DonVff9?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">10. Makam Sultan Iskandar Muda</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/3PQBzrdkt3EpWDk36?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/3PQBzrdkt3EpWDk36</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/3PQBzrdkt3EpWDk36?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">11. Museum Aceh &amp; Rumoh Aceh</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/zk7wtJF1mybpVSdLA?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/zk7wtJF1mybpVSdLA</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/zk7wtJF1mybpVSdLA?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">12. Taman Gunongan &amp; Pinto Khop</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/SFpog83Wpdptkr9VA?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/SFpog83Wpdptkr9VA</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/SFpog83Wpdptkr9VA?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">13. Kerkhoff Poureut</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/zzXy3nKdbwwNGueTA?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/zzXy3nKdbwwNGueTA</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/zzXy3nKdbwwNGueTA?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">14. Lapangan Blang Padang</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/AWCMUXJTECpeuFH78?g_st=iw" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/AWCMUXJTECpeuFH78</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/AWCMUXJTECpeuFH78?g_st=iw'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">15. Pantai Ulee Lheue</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/NhaqKmTA8WjCEEo17?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/NhaqKmTA8WjCEEo17</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/NhaqKmTA8WjCEEo17?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">16. Hutan Kota BNI Tibang</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/5DDh2qr4uapkoSYm8?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/5DDh2qr4uapkoSYm8</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/5DDh2qr4uapkoSYm8?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">17. Kawasan Bahari Alue Naga</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/aXyLFR4SaAnG3NM29?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/aXyLFR4SaAnG3NM29</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/aXyLFR4SaAnG3NM29?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">18. Mie Razali Peunayong</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/D15QYUUENx3UiFZt8?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/D15QYUUENx3UiFZt8</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/D15QYUUENx3UiFZt8?g_st=ic'); alert('Link disalin!');">Salin</button></div><div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs"><div class="min-w-0 pr-2"><p class="font-bold text-slate-900 truncate">19. Wisata Kuliner Ulee Lheue</p><a class="text-aceh-ocean font-mono text-[11px] hover:underline truncate block" href="https://maps.app.goo.gl/m77VXTzqj56y2YE16?g_st=ic" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/m77VXTzqj56y2YE16</a></div><button class="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-100 shrink-0" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/m77VXTzqj56y2YE16?g_st=ic'); alert('Link disalin!');">Salin</button></div></div></div>
+</div>
+</section>
+<!-- END: DestinationExplorer -->
+<!-- BEGIN: QrExperienceSection -->
+
+<!-- END: QrExperienceSection -->
+<!-- BEGIN: RouteAndMapSection -->
+<section class="py-20 bg-white" id="peta-wisata">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-14">
+<span class="text-xs font-black tracking-widest text-aceh-purple uppercase px-3 py-1 bg-purple-50 rounded-full border border-purple-200">Panduan Perjalanan Cerdas</span>
+<h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">Rekomendasi Rute 1 Hari</h2>
+<p class="text-slate-600 text-sm font-medium mt-2">Maksimalkan waktu kunjungan Anda di Banda Aceh dengan itinerari tematik pilihan berikut.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Route 1 -->
+<div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 hover:border-aceh-emerald hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-emerald-100 text-aceh-emerald flex items-center justify-center text-xl font-black mb-4">01</div>
+<h3 class="text-xl font-black text-slate-900">Rute Religi &amp; Jejak Sejarah</h3>
+<p class="text-xs text-slate-500 mt-1 font-semibold">Pagi hingga Siang (08:00 - 13:00)</p>
+<ul class="mt-5 space-y-3 text-sm text-slate-700 font-medium">
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Masjid Raya Baiturrahman</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Museum Aceh &amp; Rumoh Aceh</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Taman Gunongan &amp; Pinto Khop</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Makam Sultan Iskandar Muda</li>
+</ul>
+</div>
+<div class="mt-6 space-y-2"><a class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-2 pointer-events-auto shadow-sm transition-all" href="https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-map-location-dot"></i> Buka Rute Google Maps 01</a><div class="flex items-center justify-between gap-1 text-[11px] bg-emerald-50 p-2 rounded-xl border border-emerald-200"><a class="truncate font-mono text-emerald-700 hover:underline font-semibold" href="https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw" target="_blank" rel="noopener noreferrer">🔗 maps.app.goo.gl/Pu7SALMt81s5aMfEA</a><button class="px-2 py-1 bg-white text-emerald-800 rounded text-[10px] font-bold shrink-0 border border-emerald-200" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/Pu7SALMt81s5aMfEA?g_st=iw'); alert('Link rute disalin!'); return false;">Salin</button></div></div>
+</div>
+<!-- Route 2 -->
+<div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 hover:border-aceh-crimson hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-rose-100 text-aceh-crimson flex items-center justify-center text-xl font-black mb-4">02</div>
+<h3 class="text-xl font-black text-slate-900">Rute Refleksi Tsunami</h3>
+<p class="text-xs text-slate-500 mt-1 font-semibold">Siang hingga Sore (13:30 - 17:00)</p>
+<ul class="mt-5 space-y-3 text-sm text-slate-700 font-medium">
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Museum Tsunami Aceh</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Monumen PLTD Apung Punge</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Kapal di Atas Rumah Lampulo</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Makam Massal Ulee Lheue</li>
+</ul>
+</div>
+<div class="mt-6 space-y-2"><a class="w-full py-2.5 px-4 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold flex items-center justify-center gap-2 pointer-events-auto shadow-sm transition-all" href="https://maps.app.goo.gl/r6e46raz3mrtXKzd6?g_st=iw" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-map-location-dot"></i> Buka Rute Google Maps 02</a><div class="flex items-center justify-between gap-1 text-[11px] bg-rose-50 p-2 rounded-xl border border-rose-200"><a class="truncate font-mono text-rose-600 hover:underline font-semibold" href="https://maps.app.goo.gl/r6e46raz3mrtXKzd6?g_st=iw" target="_blank" rel="noopener noreferrer">🔗 maps.app.goo.gl/r6e46raz3mrtXKzd6</a><button class="px-2 py-1 bg-white text-rose-800 rounded text-[10px] font-bold shrink-0 border border-rose-200" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/r6e46raz3mrtXKzd6?g_st=iw'); alert('Link rute disalin!'); return false;">Salin</button></div></div>
+</div>
+<!-- Route 3 -->
+<div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 hover:border-aceh-ocean hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-sky-100 text-aceh-ocean flex items-center justify-center text-xl font-black mb-4">03</div>
+<h3 class="text-xl font-black text-slate-900">Rute Senja Bahari &amp; Kuliner</h3>
+<p class="text-xs text-slate-500 mt-1 font-semibold">Sore hingga Malam (17:00 - 21:00)</p>
+<ul class="mt-5 space-y-3 text-sm text-slate-700 font-medium">
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-600"></i> Sunset di Pantai Ulee Lheue</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-600"></i> Masjid Baiturrahim Ulee Lheue</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-600"></i> Santai Jagung &amp; Kopi Sanger</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-600"></i> Makan Malam Mie Razali Peunayong</li>
+</ul>
+</div>
+<div class="mt-6 space-y-2"><a class="w-full py-2.5 px-4 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold flex items-center justify-center gap-2 pointer-events-auto shadow-sm transition-all" href="https://maps.app.goo.gl/yhX7FT5FBkxTyFHG7?g_st=iw" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-map-location-dot"></i> Buka Rute Google Maps 03</a><div class="flex items-center justify-between gap-1 text-[11px] bg-sky-50 p-2 rounded-xl border border-sky-200"><a class="truncate font-mono text-sky-600 hover:underline font-semibold" href="https://maps.app.goo.gl/yhX7FT5FBkxTyFHG7?g_st=iw" target="_blank" rel="noopener noreferrer">🔗 maps.app.goo.gl/yhX7FT5FBkxTyFHG7</a><button class="px-2 py-1 bg-white text-sky-800 rounded text-[10px] font-bold shrink-0 border border-sky-200" onclick="navigator.clipboard.writeText('https://maps.app.goo.gl/yhX7FT5FBkxTyFHG7?g_st=iw'); alert('Link rute disalin!'); return false;">Salin</button></div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: RouteAndMapSection -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="bg-slate-900 text-white border-t border-slate-800 pt-16 pb-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+<!-- Brand Info -->
+<div class="md:col-span-5 space-y-4">
+<div class="flex items-center gap-3">
+<img alt="Logo Halo Banda Aceh Footer" class="w-14 h-14 object-contain rounded-xl bg-white p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMDAJT7hODsfhnhMIe70Obq7Fy0X2L1jwC29zTbANfjmVXJA-gFQqoDpCW8UYjAoXrh3_Fl8SRG1zEj8kz1e24eyMvAi5UoZoPimlWB8bPrEjGz9xm8oZ3XzXEerJ3sVSMKKsVDP4JR6mZx_bOdvKIT1Yf0inuMmoUFNWxx-vW6H532okPgc_KDxIwlANXzQIiHYuswtErIT2UwVktl6qq122igbR3a2t4jroSxd8DM5EPgvN1C_3DHeCJSg2YNu-XKg">
+<div>
+<span class="text-xl font-black tracking-tight text-white">HALO <span class="text-aceh-gold">BANDA ACEH</span></span>
+<p class="text-xs text-slate-400">Satu Sapaan, Lima Pesona.</p>
+</div>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed pr-6">
+            Media interaktif terpadu menyajikan keindahan religi, saksi sejarah, edukasi tsunami, panorama alam pesisir, dan kenikmatan kuliner khas Kota Banda Aceh.
+          </p>
+</div>
+<!-- Quick Links -->
+<div class="md:col-span-4 space-y-3">
+<h4 class="text-sm font-black text-amber-300 uppercase tracking-wider">Navigasi Sektor</h4>
+<div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-300">
+<a class="hover:text-amber-300 transition-colors" href="#destinasi" onclick="filterCategory('religi')">Pesona Religi</a>
+<a class="hover:text-amber-300 transition-colors" href="#destinasi" onclick="filterCategory('tsunami')">Wisata Tsunami</a>
+<a class="hover:text-amber-300 transition-colors" href="#destinasi" onclick="filterCategory('heritage')">Cagar Budaya</a>
+<a class="hover:text-amber-300 transition-colors" href="#destinasi" onclick="filterCategory('alam')">Pesisir &amp; Bahari</a>
+<a class="hover:text-amber-300 transition-colors" href="#destinasi" onclick="filterCategory('kuliner')">Kuliner Khas</a>
+
+</div>
+</div>
+<!-- Direct Quiz Trigger -->
+<div class="md:col-span-3 space-y-4">
+<h4 class="text-sm font-black text-amber-300 uppercase tracking-wider">Uji Wawasanmu</h4>
+<p class="text-xs text-slate-400">Ikuti kuis 15 soal seru ala Quizizz dan dapatkan sertifikat Duta Wisata digital!</p>
+<button class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-aceh-crimson to-aceh-gold text-white font-bold text-xs shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2 cursor-pointer pointer-events-auto" onclick="startQuizModal()">
+<i class="fa-solid fa-gamepad"></i> Buka Kuis Interaktif
+          </button>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+<p class="">© 2025 Halo Banda Aceh. Hak Cipta Dilindungi. Sapa • Jelajah • Bangga.</p>
+<div class="flex items-center gap-4 text-slate-400">
+<span class="hover:text-white cursor-pointer"><i class="fa-brands fa-instagram text-lg"></i></span>
+<span class="hover:text-white cursor-pointer"><i class="fa-brands fa-youtube text-lg"></i></span>
+<span class="hover:text-white cursor-pointer"><i class="fa-brands fa-facebook text-lg"></i></span>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: QuizizzModalGame -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-md" id="quiz-modal">
+<div class="bg-slate-900 border-2 border-amber-400 w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden text-white flex flex-col max-h-[92vh]">
+<!-- Quiz Header Bar -->
+<div class="bg-slate-800/80 p-4 border-b border-slate-700 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-aceh-crimson to-aceh-gold flex items-center justify-center font-black text-lg">
+            ⚡
+          </div>
+<div>
+<h4 class="font-extrabold text-sm sm:text-base leading-tight text-white">Kuis 15 Soal Pesona Banda Aceh</h4>
+<div class="flex items-center gap-3 text-xs text-amber-400 font-bold mt-0.5">
+<span class="" id="quiz-score-display">Skor: 0</span>
+<span class="">•</span>
+<span class="" id="quiz-streak-display">Streak: 🔥 x1</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<!-- Timer Display -->
+<div class="px-3 py-1 bg-slate-900 border border-amber-400/50 rounded-lg text-xs font-mono font-bold text-amber-300 flex items-center gap-1.5">
+<i class="fa-regular fa-clock"></i>
+<span class="" id="quiz-timer">20s</span>
+</div>
+<!-- Close Button -->
+<button aria-label="Tutup Kuis" class="text-slate-400 hover:text-white p-2 rounded-lg hover:bg-slate-700 transition-colors pointer-events-auto" onclick="closeQuizModal()">
+<i class="fa-solid fa-xmark text-lg"></i>
+</button>
+</div>
+</div>
+<!-- Question Progress Bar -->
+<div class="w-full bg-slate-800 h-2">
+<div class="bg-gradient-to-r from-aceh-crimson via-aceh-gold to-aceh-emerald h-full w-0 transition-all duration-300" id="quiz-progress-fill"></div>
+</div>
+<!-- Quiz Body / Question Box -->
+<div class="p-6 overflow-y-auto flex-1 flex flex-col justify-between" id="quiz-screen-content">
+<!-- Question Indicator & Text -->
+<div class="text-center space-y-4 my-auto py-4">
+<span class="inline-block px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-xs font-bold text-sky-400" id="quiz-q-number">
+            Soal 1 dari 15
+          </span>
+<h3 class="text-lg sm:text-2xl font-black text-white leading-snug px-2" id="quiz-question-text">
+            Memuat pertanyaan kuis...
+          </h3>
+<p class="text-xs font-semibold text-amber-300/80" id="quiz-category-badge">Kategori: Religi</p>
+</div>
+<!-- 4 Colourful Quizizz-style Option Buttons -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-4">
+<!-- Option 0: Crimson/Red -->
+<button class="quiz-btn group relative p-4 rounded-2xl bg-rose-600 hover:bg-rose-500 active:scale-98 transition-all flex items-center gap-3 text-left font-extrabold shadow-md border-b-4 border-rose-800 pointer-events-auto" id="opt-btn-0" onclick="selectAnswer(0)">
+<span class="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center text-sm font-black text-white shrink-0">▲</span>
+<span class="text-sm sm:text-base leading-tight" id="opt-text-0">Pilihan A</span>
+</button>
+<!-- Option 1: Ocean/Blue -->
+<button class="quiz-btn group relative p-4 rounded-2xl bg-sky-600 hover:bg-sky-500 active:scale-98 transition-all flex items-center gap-3 text-left font-extrabold shadow-md border-b-4 border-sky-800 pointer-events-auto" id="opt-btn-1" onclick="selectAnswer(1)">
+<span class="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center text-sm font-black text-white shrink-0">◆</span>
+<span class="text-sm sm:text-base leading-tight" id="opt-text-1">Pilihan B</span>
+</button>
+<!-- Option 2: Gold/Yellow -->
+<button class="quiz-btn group relative p-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 active:scale-98 transition-all flex items-center gap-3 text-left font-extrabold shadow-md border-b-4 border-amber-700 pointer-events-auto" id="opt-btn-2" onclick="selectAnswer(2)">
+<span class="w-8 h-8 rounded-xl bg-black/15 flex items-center justify-center text-sm font-black text-slate-900 shrink-0">●</span>
+<span class="text-sm sm:text-base leading-tight text-slate-900" id="opt-text-2">Pilihan C</span>
+</button>
+<!-- Option 3: Emerald/Green -->
+<button class="quiz-btn group relative p-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 active:scale-98 transition-all flex items-center gap-3 text-left font-extrabold shadow-md border-b-4 border-emerald-800 pointer-events-auto" id="opt-btn-3" onclick="selectAnswer(3)">
+<span class="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center text-sm font-black text-white shrink-0">■</span>
+<span class="text-sm sm:text-base leading-tight" id="opt-text-3">Pilihan D</span>
+</button>
+</div>
+</div>
+<!-- Quiz Result Screen (Hidden by default) -->
+<div class="hidden p-6 sm:p-8 text-center flex-1 flex flex-col justify-center items-center space-y-6" id="quiz-result-screen">
+<div class="w-20 h-20 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-4xl shadow-xl animate-bounce">
+          🏆
+        </div>
+<div>
+<span class="text-xs uppercase font-extrabold tracking-widest text-amber-400">Sertifikat Digital Penjelajah</span>
+<h3 class="text-2xl sm:text-3xl font-black text-white mt-1">Duta Wisata Halo Banda Aceh</h3>
+<p class="text-slate-300 text-sm mt-1">Selamat! Anda telah menyelesaikan 15 tantangan edukasi 5 Pesona.</p>
+</div>
+<!-- Result Badge Card -->
+<div class="bg-slate-800 border border-slate-700 p-5 rounded-2xl w-full max-w-sm grid grid-cols-3 gap-2 text-center">
+<div>
+<div class="text-xs text-slate-400 font-semibold">Skor Akhir</div>
+<div class="text-2xl font-black text-amber-400" id="res-final-score">1500</div>
+</div>
+<div>
+<div class="text-xs text-slate-400 font-semibold">Benar</div>
+<div class="text-2xl font-black text-emerald-400" id="res-correct-count">15/15</div>
+</div>
+<div>
+<div class="text-xs text-slate-400 font-semibold">Akurasi</div>
+<div class="text-2xl font-black text-sky-400" id="res-accuracy">100%</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+<button class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 font-bold text-slate-950 text-sm shadow-md transition-colors flex items-center gap-2 pointer-events-auto" onclick="restartQuiz()">
+<i class="fa-solid fa-rotate-right"></i> Main Lagi
+          </button>
+<button class="px-6 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 font-bold text-white text-sm transition-colors pointer-events-auto" onclick="closeQuizModal()">
+            Kembali ke Portal
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- END: QuizizzModalGame -->
+<!-- BEGIN: MapModalFallback (Ensures Google Maps always accessible even under iframe popup-blockers) -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm" id="map-modal">
+<div class="bg-white rounded-3xl p-6 max-w-md w-full shadow-2xl border-2 border-slate-100 text-center space-y-4">
+<div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-2xl">
+<i class="fa-solid fa-location-dot"></i>
+</div>
+<h3 class="text-xl font-black text-slate-900">Buka di Google Maps</h3>
+<p class="text-sm text-slate-600 font-medium">Jika tautan tidak terbuka otomatis di tab baru, silakan klik tombol di bawah untuk membuka navigasi:</p>
+<div class="pt-2 flex flex-col gap-2.5">
+<a class="w-full py-3 px-4 rounded-xl bg-aceh-ocean text-white font-bold text-sm shadow hover:bg-sky-700 flex items-center justify-center gap-2" href="#" id="modal-map-link" rel="noopener noreferrer" target="_blank">
+<i class="fa-solid fa-external-link"></i> Kunjungi Google Maps Sekarang
+      </a>
+<button class="w-full py-2.5 px-4 rounded-xl bg-slate-100 text-slate-700 font-bold text-sm hover:bg-slate-200" onclick="closeMapModal()">
+        Tutup
+      </button>
+</div>
+</div>
+</div>
+<!-- END: MapModalFallback -->
+<!-- BEGIN: ScriptLogic -->
+<script data-purpose="map-navigation-handler">
+    // Safe Google Maps Opener for Iframe & Standalone Canvas
+    function openMapsUrl(url) {
+      if (!url) return;
+      let newTab = null;
+      try {
+        newTab = window.open(url, '_blank', 'noopener,noreferrer');
+      } catch (err) {
+        console.warn('window.open was blocked or restricted:', err);
+      }
+      
+      // If browser/iframe sandbox blocks window.open or popup is prevented:
+      if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
+        const modal = document.getElementById('map-modal');
+        const modalLink = document.getElementById('modal-map-link');
+        if (modal && modalLink) {
+          modalLink.href = url;
+          modal.classList.remove('hidden');
+        } else {
+          window.location.href = url;
+        }
+      }
+    }
+
+    function closeMapModal() {
+      const modal = document.getElementById('map-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+</script>
+<script data-purpose="sound-effects">
+    // Web Audio API Synthesizer sound effects (No external audio files needed)
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new AudioCtx();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playTone(freq, type, duration, delay = 0) {
+      try {
+        const ctx = getAudioContext();
+        setTimeout(() => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, ctx.currentTime);
+          gain.gain.setValueAtTime(0.15, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + duration);
+        }, delay * 1000);
+      } catch(e) {
+        // Fallback gracefully if Web Audio is muted/blocked
+      }
+    }
+
+    function soundCorrect() {
+      playTone(523.25, 'triangle', 0.15, 0);   // C5
+      playTone(659.25, 'triangle', 0.15, 0.1); // E5
+      playTone(783.99, 'triangle', 0.3, 0.2);  // G5
+    }
+
+    function soundWrong() {
+      playTone(220, 'sawtooth', 0.2, 0);     // A3
+      playTone(180, 'sawtooth', 0.3, 0.15);  // F3
+    }
+  </script>
+<script data-purpose="filtering-and-search">
+    // Filter and Live Search Implementation
+    let currentFilter = 'all';
+
+    function filterCategory(category) {
+      currentFilter = category;
+      
+      // Update Buttons UI
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-cat') === category) {
+          btn.classList.add('bg-slate-900', 'text-white');
+          btn.classList.remove('bg-white', 'text-slate-700');
+        } else {
+          btn.classList.remove('bg-slate-900', 'text-white');
+          btn.classList.add('bg-white', 'text-slate-700');
+        }
+      });
+
+      handleFilter();
+    }
+
+    function handleFilter() {
+      const query = document.getElementById('dest-search').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.dest-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const text = card.textContent.toLowerCase();
+        
+        const matchesCategory = (currentFilter === 'all' || category === currentFilter);
+        const matchesQuery = text.includes(query);
+
+        if (matchesCategory && matchesQuery) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const noResults = document.getElementById('no-results');
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    function toggleMobileMenu() {
+      const nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('hidden');
+    }
+
+    // Mascot interactive dialog
+    const mascotSayings = [
+      "Keren! Pernahkah kamu mengunjungi replika Pesawat RI-001 Seulawah di Blang Padang?",
+      "Museum Tsunami dirancang dengan konsep Rumah Panggung Aceh lho!",
+      "Jangan lupa cicipi Mie Kepiting Razali di Peunayong, rempahnya juara!",
+      "Kubah Masjid Kupiah Meuketop sangat unik menyerupai peci Teuku Umar!",
+      "Ayo uji wawasanmu di kuis 15 soal untuk jadi Duta Wisata Banda Aceh!"
+    ];
+    let mascotIdx = 0;
+
+    function mascotSpeak() {
+      mascotIdx = (mascotIdx + 1) % mascotSayings.length;
+      document.getElementById('mascot-text').innerText = `"${mascotSayings[mascotIdx]}"`;
+      playTone(600, 'sine', 0.1);
+    }
+  </script>
+<script data-purpose="quizizz-game-engine">
+    // 15 Complete Questions covering all 5 sectors (Religi, Tsunami, Heritage, Alam, Kuliner)
+    const questions = [
+      {
+        q: "Arsitektur Masjid Raya Baiturrahman dipengaruhi perpaduan gaya Kesultanan Mughal India dan didirikan pada masa Kesultanan siapa?",
+        options: ["Sultan Iskandar Muda", "Sultan Ali Mughayat Syah", "Sultan Malikussaleh", "Teuku Nyak Arief"],
+        answer: 0,
+        cat: "Religi"
+      },
+      {
+        q: "Monumen PLTD Apung di Punge Blang Cut memiliki bobot luar biasa yang terbawa tsunami sejauh 5 km. Berapakah bobot kapal tersebut?",
+        options: ["1.200 Ton", "2.600 Ton", "500 Ton", "10.000 Ton"],
+        answer: 1,
+        cat: "Tsunami"
+      },
+      {
+        q: "Pesawat pertama Republik Indonesia jenis Dakota DC-3 yang dibeli dari sumbangan emas rakyat Aceh dikenal dengan nama...",
+        options: ["RI-001 Seulawah", "RI-002 Merpati", "Garuda Nusantara", "Avia Aceh"],
+        answer: 0,
+        cat: "Heritage"
+      },
+      {
+        q: "Bangunan Taman Gunongan dibangun oleh Sultan Iskandar Muda sebagai tanda cinta kasih mendalam kepada sang permaisuri yang berasal dari...",
+        options: ["Pahang (Malaysia)", "Siam (Thailand)", "Minangkabau", "Turki Utsmani"],
+        answer: 0,
+        cat: "Heritage"
+      },
+      {
+        q: "Masjid yang tetap berdiri kokoh meski diterjang tsunami 2004 di dekat pelabuhan penyeberangan adalah...",
+        options: ["Masjid Baiturrahim Ulee Lheue", "Masjid Teuku Umar", "Masjid Raya Baiturrahman", "Masjid Keuchik Leumik"],
+        answer: 0,
+        cat: "Religi"
+      },
+      {
+        q: "Siapakah arsitek terkemuka yang merancang gedung megah Museum Tsunami Aceh?",
+        options: ["Ridwan Kamil", "Frederich Silaban", "Han Awal", "Andra Matin"],
+        answer: 0,
+        cat: "Tsunami"
+      },
+      {
+        q: "Kuliner legendaris Mie Razali yang terkenal dengan kuah kental kari dan seafood telah berdiri sejak tahun...",
+        options: ["1967", "1998", "1945", "1982"],
+        answer: 0,
+        cat: "Kuliner"
+      },
+      {
+        q: "Kubah Masjid Kupiah Meuketop diilhami dari penutup kepala adat tradisional Aceh yang melambangkan...",
+        options: ["Kehormatan & Kepahlawanan Teuku Umar", "Kemewahan Saudagar Emas", "Kekuatan Militer Belanda", "Simbol Maritim Nelayan"],
+        answer: 0,
+        cat: "Religi"
+      },
+      {
+        q: "Kompleks pemakaman militer Belanda terbesar di Kota Banda Aceh yang menyimpan makam Jenderal Kohler adalah...",
+        options: ["Kerkhoff Poureut", "San Diego Hills", "Ereveld Menteng", "Astana Giribangun"],
+        answer: 0,
+        cat: "Heritage"
+      },
+      {
+        q: "Hutan Kota BNI Tibang diresmikan sebagai sarana edukasi lingkungan dan konservasi mangrove seluas...",
+        options: ["± 7 Hektar", "± 50 Hektar", "± 1 Hektar", "± 25 Hektar"],
+        answer: 0,
+        cat: "Alam"
+      },
+      {
+        q: "Situs 'Kapal di Atas Rumah' yang tersangkut di permukiman saat tsunami berlokasi di gampong...",
+        options: ["Lampulo", "Punge Blang Cut", "Peunayong", "Syiah Kuala"],
+        answer: 0,
+        cat: "Tsunami"
+      },
+      {
+        q: "Lonceng raksasa bersejarah hadiah Kaisar Tiongkok abad ke-15 yang tersimpan di Museum Aceh bernama...",
+        options: ["Cakra Donya", "Genta Samudra", "Kyai Guntur", "Bende Mataram"],
+        answer: 0,
+        cat: "Heritage"
+      },
+      {
+        q: "Minuman kopi khas Aceh yang terkenal di warung kuliner Ulee Lheue dengan racikan kopi saring dan susu kental manis dinamakan...",
+        options: ["Kopi Sanger", "Kopi Luwak", "Kopi Joss", "Espresso Macchiato"],
+        answer: 0,
+        cat: "Kuliner"
+      },
+      {
+        q: "Kawasan Bahari Alue Naga terkenal dengan pemandangan alami yang diapit oleh rimbunnya pohon...",
+        options: ["Cemara Laut", "Beringin Putih", "Kelapa Sawit", "Akasia"],
+        answer: 0,
+        cat: "Alam"
+      },
+      {
+        q: "Masjid megah bernuansa emas di tepi Krueng Aceh yang didirikan oleh tokoh filantropis dan kolektor emas Aceh adalah...",
+        options: ["Masjid Haji Keuchik Leumik", "Masjid Oman Al-Makmur", "Masjid Babuttaqwa", "Masjid Harun Keuchik"],
+        answer: 0,
+        cat: "Religi"
+      }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+    let streak = 0;
+    let timerInterval = null;
+    let timeLeft = 20;
+    let answered = false;
+
+    function startQuizModal() {
+      document.getElementById('quiz-modal').classList.remove('hidden');
+      restartQuiz();
+    }
+
+    function closeQuizModal() {
+      clearInterval(timerInterval);
+      document.getElementById('quiz-modal').classList.add('hidden');
+    }
+
+    function restartQuiz() {
+      currentQ = 0;
+      score = 0;
+      streak = 0;
+      document.getElementById('quiz-screen-content').classList.remove('hidden');
+      document.getElementById('quiz-result-screen').classList.add('hidden');
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      answered = false;
+      timeLeft = 20;
+      document.getElementById('quiz-timer').innerText = timeLeft + 's';
+      clearInterval(timerInterval);
+
+      const q = questions[currentQ];
+      document.getElementById('quiz-q-number').innerText = `Soal ${currentQ + 1} dari ${questions.length}`;
+      document.getElementById('quiz-category-badge').innerText = `Kategori: ${q.cat}`;
+      document.getElementById('quiz-question-text').innerText = q.q;
+
+      // Progress bar fill
+      const progressPct = ((currentQ) / questions.length) * 100;
+      document.getElementById('quiz-progress-fill').style.width = progressPct + '%';
+
+      // Load 4 options
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`opt-btn-${i}`);
+        const txt = document.getElementById(`opt-text-${i}`);
+        txt.innerText = q.options[i];
+        
+        // Reset classes
+        btn.classList.remove('opacity-40', 'ring-4', 'ring-white');
+        btn.disabled = false;
+      }
+
+      // Start Countdown
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        document.getElementById('quiz-timer').innerText = timeLeft + 's';
+        if (timeLeft <= 5) {
+          playTone(400, 'sine', 0.05);
+        }
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          handleTimeout();
+        }
+      }, 1000);
+    }
+
+    function handleTimeout() {
+      if (answered) return;
+      answered = true;
+      streak = 0;
+      updateStatsUI();
+      soundWrong();
+      highlightAnswer(questions[currentQ].answer, -1);
+      setTimeout(nextQuestion, 1500);
+    }
+
+    function selectAnswer(selectedIdx) {
+      if (answered) return;
+      answered = true;
+      clearInterval(timerInterval);
+
+      const correctIdx = questions[currentQ].answer;
+      if (selectedIdx === correctIdx) {
+        streak++;
+        const points = 100 + (timeLeft * 5) + (streak * 20);
+        score += points;
+        soundCorrect();
+      } else {
+        streak = 0;
+        soundWrong();
+      }
+
+      updateStatsUI();
+      highlightAnswer(correctIdx, selectedIdx);
+      setTimeout(nextQuestion, 1400);
+    }
+
+    function highlightAnswer(correctIdx, selectedIdx) {
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`opt-btn-${i}`);
+        btn.disabled = true;
+        if (i === correctIdx) {
+          btn.classList.add('ring-4', 'ring-white');
+        } else {
+          btn.classList.add('opacity-40');
+        }
+      }
+    }
+
+    function updateStatsUI() {
+      document.getElementById('quiz-score-display').innerText = `Skor: ${score}`;
+      document.getElementById('quiz-streak-display').innerText = `Streak: 🔥 x${streak > 0 ? streak : 1}`;
+    }
+
+    function nextQuestion() {
+      currentQ++;
+      if (currentQ < questions.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      clearInterval(timerInterval);
+      document.getElementById('quiz-progress-fill').style.width = '100%';
+      document.getElementById('quiz-screen-content').classList.add('hidden');
+      document.getElementById('quiz-result-screen').classList.remove('hidden');
+
+      const totalPossible = questions.length * 200;
+      const accuracy = Math.min(100, Math.round((score / totalPossible) * 100));
+
+      document.getElementById('res-final-score').innerText = score;
+      document.getElementById('res-correct-count').innerText = `${Math.round(score / 150)}/${questions.length}`;
+      document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+
+      // Celebration Confetti
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 120,
+          spread: 80,
+          origin: { y: 0.6 }
+        });
+      }
+      playTone(523, 'triangle', 0.2, 0);
+      playTone(659, 'triangle', 0.2, 0.15);
+      playTone(783, 'triangle', 0.4, 0.3);
+      playTone(1046, 'triangle', 0.5, 0.45);
+    }
+  </script>
+<!-- END: ScriptLogic -->
+
+
+
+
+
+
+
+
+</body></html>
